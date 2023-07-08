@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:main_project/util/screen_size.dart';
+import 'package:main_project/views/signup/screens/try_scr_sing_up.dart';
 
 import '../../../util/my_colors.dart';
 
@@ -293,12 +294,14 @@ class _SignupScreenState extends State<SignupScreen> {
     return Center(
       child: InkWell(
         onTap: () {
-          print("name : ${_editingControllerName.text}");
+          Navigator.push(context, MaterialPageRoute(builder:(context) => TryScreen()));
+        
+         /*  print("name : ${_editingControllerName.text}");
           print("Email : ${_editingControllerEmail.text}");
           print("PassWord : ${_editingControllerPassWord.text}");
           print("Phone : ${_editingControllerPhone.text}");
           print("UserType : ${_radioButtonGropVulue}");
-          print("DropDown : ${dropdownvalue}");
+          print("DropDown : ${dropdownvalue}"); */
           
           
         },
