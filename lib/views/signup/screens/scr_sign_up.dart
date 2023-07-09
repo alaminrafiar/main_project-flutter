@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:main_project/util/screen_size.dart';
+import 'package:main_project/view_models/signup_view_model.dart';
 import 'package:main_project/views/signup/screens/try_scr_sing_up.dart';
 
 import '../../../util/my_colors.dart';
@@ -294,7 +295,7 @@ class _SignupScreenState extends State<SignupScreen> {
     return Center(
       child: InkWell(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder:(context) => TryScreen()));
+          // Navigator.push(context, MaterialPageRoute(builder:(context) => TryScreen()));
         
          /*  print("name : ${_editingControllerName.text}");
           print("Email : ${_editingControllerEmail.text}");
@@ -303,6 +304,12 @@ class _SignupScreenState extends State<SignupScreen> {
           print("UserType : ${_radioButtonGropVulue}");
           print("DropDown : ${dropdownvalue}"); */
           
+
+          // create signup view model object 
+         SignUpViewModel signUpViewModelObject = SignUpViewModel();
+
+         // call mSaveData Method by useing signup view model object
+          signUpViewModelObject.mSaveData(_editingControllerName.text, _editingControllerEmail.text, _editingControllerPhone.text, _editingControllerPassWord.text, _radioButtonGropVulue,dropdownvalue);
           
         },
         child: Container(
